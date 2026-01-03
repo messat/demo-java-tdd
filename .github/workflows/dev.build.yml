@@ -24,7 +24,7 @@ jobs:
         run: |
            mvn -B clean test jacoco:report coveralls:report
         env:
-          COVERALLS: ${{ secrets.COVERALLS}}
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN}}
 
       - name: Artifact Upload
         uses: actions/upload-artifact@v4
