@@ -22,7 +22,9 @@ jobs:
         
       - name: Code Coverage
         run: |
-           mvn- B jacoco:prepare-agent clean test jacoco:report coveralls:report -Dcoveralls.secret=${{ secrets.COVERALLS}}
+           mvn -B clean test jacoco:report coveralls:report
+        env:
+          COVERALLS: ${{ secrets.COVERALLS}}
 
       - name: Artifact Upload
         uses: actions/upload-artifact@v4
