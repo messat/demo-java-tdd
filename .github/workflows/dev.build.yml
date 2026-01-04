@@ -20,7 +20,7 @@ jobs:
           mkdir staging
           cp target/*.jar staging
         
-      - name: Code Coverage
+      - name: Code Coverage (Jacoco + Coveralls)
         run: |
            mvn -B clean test jacoco:report coveralls:report
         env:
